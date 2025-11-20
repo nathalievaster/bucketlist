@@ -1,0 +1,85 @@
+<?php
+
+class ListItem
+{
+    private $db;
+    private $name;
+    private $text;
+    private $priority;
+    private $created_at;
+
+    function __construct()
+    {
+        $this->db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+        if ($this->db->connect_errno) {
+            die("Failed to connect to MySQL: (" . $this->db->connect_errno . ") " . $this->db->connect_error);
+        }
+    }
+
+    public function getList(): array
+    {
+        $sql = "SELECT * FROM bucketlist ORDER BY created_at DESC";
+        $result = $this->db->query($sql);
+
+        $list = [];
+        while ($row = $result->fetch_assoc()) {
+            $list[] = $row;
+        }
+        return $list;
+    }
+
+    public function addItem (string $name, string $text, string $priority): bool
+    {
+        if (!$this->setName($name) || !$this->setText($text) || !$this->setPriority($priority)) {
+            return false;
+        }
+        $sql = "INSERT INTO bucketlist (name, description, priority) VALUES ('{$this->name}', '{$this->text}', {$this->priority})";
+
+        $result = mysqli_query($this->db, $sql);
+        return $result;
+    }
+
+    // Setters
+    public function setName(string $name): bool
+    {
+        if ($name != "") {
+            $this->name = $this->db->real_escape_string($name);
+            return true;
+        }
+        return false;   
+    }
+
+    public function setText(string $text): bool
+    {
+        if ($text != "") {
+            $this->text = $this->db->real_escape_string($text);
+            return true;
+        }
+        return false;   
+    }
+    public function setPriority(int $priority): bool
+    {
+        if (in_array($priority, [1, 2, 3])) {
+            $this->priority = $priority;
+            return true;
+        }
+        return false;   
+    }
+
+    // Getters
+    public function getName(): string
+    {
+        return $this->name;
+    }
+    
+    public function getText(): string
+    {
+        return $this->text;
+    }
+
+    public function getpriority(): int
+    {
+        return $this->priority;
+    }
+}
