@@ -1,0 +1,107 @@
+header {
+    background-image: url("../images/background.JPEG");
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header > a {
+    color: white;
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: rgba(0,0,0,0.4);
+    padding: 0.5em 1em;
+    border-radius: 8px;
+}
+
+
+header nav {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;    
+    transition: transform 0.4s ease-in-out, text-decoration 0.4s ease-in-out;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+    transform: scale(1.2);    
+}      
+
+.message {
+    color: green;
+}
+
+.error-message {
+    color: red;
+}
+
+footer {
+    background: #222;
+    color: white;
+    padding: 3em 2em;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0.5em;
+    text-align: right; 
+}
+
+footer ul li {
+    margin: 0.8em;
+}
+
+footer ul li:first-child {
+    font-weight: bold;
+    margin-bottom: 0.3em;
+}
+
+/* More specific and visible styles for status messages */
+p.message, .message {
+    color: #216e21;
+    background: rgba(33,110,33,0.06);
+    padding: 0.4rem 0.6rem;
+    border-left: 4px solid #216e21;
+    display: inline-block;
+    margin: 0.6rem 0;
+}
+
+p.error-message, .error-message {
+    color: #a61e1e;
+    background: rgba(166,30,30,0.06);
+    padding: 0.4rem 0.6rem;
+    border-left: 4px solid #a61e1e;
+    display: inline-block;
+    margin: 0.6rem 0;
+}
