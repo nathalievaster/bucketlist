@@ -23,7 +23,7 @@
     ?>
 
     <form method="post" action="addbucketlist.php">
-        <label for="name">Uppgift:</label><br>
+        <label for="name">Mål:</label><br>
         <input type="text" id="name" name="name"><br>
 
         <label for="description">Beskrivning:</label><br>

@@ -7,7 +7,7 @@
     <table>
         <thead>
             <tr>
-                <th>Uppgift</th>
+                <th>Mål</th>
                 <th>Beskrivning</th>
                 <th>Prioritet</th>
                 <th>Skapad</th>
