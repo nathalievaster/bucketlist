@@ -14,8 +14,8 @@
             <ul>
                 <li><a href="index.php">Startsida</a></li>
                 <li><a href="bucketlist.php">Bucketlist</a></li>
-                <li><a href="addbucketlist.php">Lägg till i bucketlist</a></li>
-                <li><a href="ai.php">AI-verktyg jag använt</a></li>
+                <li><a href="addbucketlist.php">Lägg till</a></li>
+                <li><a href="ai.php">AI</a></li>
             </ul>
         </nav>
     </header>
