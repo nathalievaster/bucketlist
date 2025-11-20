@@ -1,3 +1,7 @@
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
 header {
     background-image: url("../images/background.JPEG");
     background-size: cover;
@@ -54,6 +58,19 @@ header nav a:hover {
 
 .error-message {
     color: red;
+}
+
+table {
+    max-width: 75%;
+    margin: 2em auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+table th, table td {
+    padding: 1em;
+    border: 1px solid #ddd;
+    text-align: left;
 }
 
 footer {
