@@ -14,8 +14,8 @@
 
         $todo = new ListItem();
 
-        if($course->addItem($name, $description, $priority)) {
-            echo "<p class='message'>Uppgiften har lagts till i din lista!</p>";
+        if($todo->addItem($name, $description, $priority)) {
+            echo "<p class='message'>Målet har lagts till i din lista!</p>";
         } else {
             echo "<p class='error-message'>Det gick inte att lägga till uppgiften. Kontrollera att alla fält är ifyllda.</p>";
         }
@@ -36,7 +36,7 @@
             <option value="3">Hög</option>
         </select><br>
 
-        <input type="submit" value="Lägg till uppgift">
+        <input type="submit" value="Lägg till mål">
     </form>
 
 <?php

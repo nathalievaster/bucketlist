@@ -34,7 +34,7 @@ class ListItem
         if (!$this->setName($name) || !$this->setDescription($description) || !$this->setPriority($priority)) {
             return false;
         }
-        $sql = "INSERT INTO bucketlist (name, description, priority) VALUES ('{$this->name}', '{$this->$description}', {$this->priority})";
+        $sql = "INSERT INTO bucketlist (name, description, priority) VALUES ('{$this->name}', '{$this->description}', {$this->priority})";
 
         $result = mysqli_query($this->db, $sql);
         return $result;
@@ -53,7 +53,7 @@ class ListItem
     public function setDescription(string $description): bool
     {
         if ($description != "") {
-            $this->text = $this->db->real_escape_string($description);
+            $this->description = $this->db->real_escape_string($description);
             return true;
         }
         return false;   
