@@ -14,6 +14,35 @@
             </tr>
         </thead>
         <tbody>
+            <?php 
+            $todo = new ListItem();
+            $todos = $todo->getList();
+
+            foreach ($todos as $t) {
+            ?>
+
+            <tr>
+                <td><?= $t['name']; ?></td>
+                <td><?= $t['description']; ?></td>
+                <td>
+                    <?php 
+                    switch ($t['priority']) {
+                        case 1:
+                            echo "Låg";
+                            break;
+                        case 2:
+                            echo "Mellan";
+                            break;
+                        case 3:
+                            echo "Hög";
+                            break;
+                        default:
+                            echo "Okänd";
+                    }
+                    ?>
+                </td>
+                </tr>
+            <?php } ?>
         </tbody>
     </table>
 

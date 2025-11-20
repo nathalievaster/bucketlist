@@ -4,7 +4,7 @@ class ListItem
 {
     private $db;
     private $name;
-    private $text;
+    private $description;
     private $priority;
     private $created_at;
 
@@ -29,12 +29,12 @@ class ListItem
         return $list;
     }
 
-    public function addItem (string $name, string $text, string $priority): bool
+    public function addItem (string $name, string $description, string $priority): bool
     {
-        if (!$this->setName($name) || !$this->setText($text) || !$this->setPriority($priority)) {
+        if (!$this->setName($name) || !$this->setDescription($description) || !$this->setPriority($priority)) {
             return false;
         }
-        $sql = "INSERT INTO bucketlist (name, description, priority) VALUES ('{$this->name}', '{$this->text}', {$this->priority})";
+        $sql = "INSERT INTO bucketlist (name, description, priority) VALUES ('{$this->name}', '{$this->$description}', {$this->priority})";
 
         $result = mysqli_query($this->db, $sql);
         return $result;
@@ -50,10 +50,10 @@ class ListItem
         return false;   
     }
 
-    public function setText(string $text): bool
+    public function setDescription(string $description): bool
     {
-        if ($text != "") {
-            $this->text = $this->db->real_escape_string($text);
+        if ($description != "") {
+            $this->text = $this->db->real_escape_string($description);
             return true;
         }
         return false;   
@@ -73,9 +73,9 @@ class ListItem
         return $this->name;
     }
     
-    public function getText(): string
+    public function getDescription(): string
     {
-        return $this->text;
+        return $this->description;
     }
 
     public function getpriority(): int
