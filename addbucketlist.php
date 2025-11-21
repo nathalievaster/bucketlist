@@ -14,6 +14,12 @@
 
         $todo = new ListItem();
 
+        // Kontrollera input och skriv ut specifika felmeddelanden
+        $errors = [];
+        if(!$todo->setName ($name)) { array_push($errors, "Fyll i namn på målet."); }
+        if(!$todo->setDescription ($description)) { array_push($errors, "Fyll i beskrivning av målet."); }
+        if(!$todo->setPriority ($priority)) { array_push($errors,"Fyll i prioritet av målet."); }
+
         if($todo->addItem($name, $description, $priority)) {
             echo "<p class='message'>Målet har lagts till i din lista!</p>";
         } else {
@@ -23,6 +29,16 @@
     ?>
 
     <form method="post" action="addbucketlist.php">
+        <?php
+        if(isset($errors) && count($errors) > 0) {
+            echo "<div class='error-message'><ul>";
+            foreach($errors as $error) {
+                echo "<li>" . htmlspecialchars($error) . "</li>";
+            }
+            echo "</ul></div>";
+        }
+
+        ?>
         <label for="name">Mål:</label><br>
         <input type="text" id="name" name="name"><br>
 
