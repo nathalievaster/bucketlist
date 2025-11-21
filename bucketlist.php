@@ -1,31 +1,32 @@
 <?php
-    $title = "Startsida";
-    include 'includes/header.php';
+$title = "Startsida";
+include 'includes/header.php';
 ?>
 
-    <h1>Här ser du din att-göra-lista</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Mål</th>
-                <th>Beskrivning</th>
-                <th>Prioritet</th>
-                <th>Skapad</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php 
-            $todo = new ListItem();
-            $todos = $todo->getList();
+<h1>Här ser du din att-göra-lista</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Mål</th>
+            <th>Beskrivning</th>
+            <th>Prioritet</th>
+            <th>Skapad</th>
+            <th>Åtgärd</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        $todo = new ListItem();
+        $todos = $todo->getList();
 
-            foreach ($todos as $t) {
+        foreach ($todos as $t) {
             ?>
 
             <tr>
                 <td><?= $t['name']; ?></td>
                 <td><?= $t['description']; ?></td>
                 <td>
-                    <?php 
+                    <?php
                     switch ($t['priority']) {
                         case 1:
                             echo "Låg";
@@ -42,11 +43,17 @@
                     ?>
                 </td>
                 <td><?= date("Y-m-d H:i:s", strtotime($t['created_at'])); ?></td>
-                </tr>
-            <?php } ?>
-        </tbody>
-    </table>
+                <td>
+                    <a class ="delete-btn" href="delete.php?id=<?= $t['id']; ?>"
+                        onclick="return confirm('Vill du verkligen radera denna uppgift?');">
+                        Radera
+                    </a>
+                </td>
+            </tr>
+        <?php } ?>
+    </tbody>
+</table>
 
 <?php
-    include 'includes/footer.php';
+include 'includes/footer.php';
 ?>

@@ -82,4 +82,13 @@ class ListItem
     {
         return $this->priority;
     }
+
+    // ChatGPT-generated delete metod
+    public function deleteItem(int $id): bool
+{
+    $id = intval($id); // säkerhet
+    $sql = "DELETE FROM bucketlist WHERE id = $id";
+    return $this->db->query($sql);
+}
+
 }
