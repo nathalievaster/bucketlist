@@ -1,3 +1,4 @@
+</main>
 <footer>
     <p>&copy; 2025 Laborera PHP med mig!</p>
     <div class="contact">
