@@ -194,6 +194,13 @@ header > a {
     }
 }
 
+.text-container {
+    max-width: 750px;
+    margin: 5em auto;
+    line-height: 1.6em;
+    font-size: 1.1em;
+
+}
 
 form {
     max-width: 500px;
