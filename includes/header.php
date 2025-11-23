@@ -8,15 +8,17 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <a href="index.php">Bucketlist</a>
-        <nav>
-            <ul>
-                <li><a href="index.php">Startsida</a></li>
-                <li><a href="bucketlist.php">Bucketlist</a></li>
-                <li><a href="addbucketlist.php">Lägg till</a></li>
-                <li><a href="ai.php">AI</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <a href="index.php" class="logo">Bucketlist</a>
+
+    <button class="menu-toggle" aria-label="Öppna meny" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <?php include 'includes/mainmenu.php'; ?>
+</header>
+
+<div class="menu-backdrop"></div>
     <main>

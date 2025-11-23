@@ -8,6 +8,7 @@
         </ul>
     </div>
 </footer>
-            
+<script src="toggle.js"></script>
+
 </body>
 </html>
