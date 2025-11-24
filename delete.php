@@ -1,12 +1,11 @@
 <?php
-require 'includes/header.php';
-require 'includes/classes/listItem.class.php';
+require 'includes/config.php';
+require __DIR__ . '/includes/classes/ListItem.class.php';
 
 if (isset($_GET['id'])) {
     $todo = new ListItem();
-    $todo->deleteItem($_GET['id']);
+    $todo->deleteItem((int)$_GET['id']);
 }
 
-// Skicka tillbaka användaren efter radering
 header("Location: bucketlist.php");
 exit;
