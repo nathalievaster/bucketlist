@@ -52,7 +52,7 @@
             <option value="3">Hög</option>
         </select><br>
 
-        <input type="submit" value="Lägg till mål">
+        <input class="btn" type="submit" value="Lägg till mål">
     </form>
 
 <?php

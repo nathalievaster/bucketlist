@@ -272,6 +272,15 @@ table th, table td {
     color: white;
     font-weight: 600;
     text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.delete-btn:hover {
+    background-color: #dc354645;
+}
+
+.btn:hover {
+    background-color: #28a74679
 }
 
 footer {
